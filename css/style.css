@@ -266,6 +266,8 @@ section { scroll-margin-top: 80px; }
 .drawer__foot { padding: 1.5rem; border-top: 1px solid var(--blush-100); }
 .drawer__total { display: flex; justify-content: space-between; margin-bottom: 1rem; }
 .drawer__total strong { font-family: var(--serif); font-size: 1.4rem; color: var(--rosewood); }
+.drawer__secure { text-align: center; font-size: .75rem; color: var(--ink-soft); margin-top: .7rem; }
+.btn:disabled { opacity: .6; cursor: wait; }
 .overlay { position: fixed; inset: 0; background: rgba(74,52,56,.35); z-index: 90; opacity: 0; pointer-events: none; transition: opacity .3s; }
 .overlay.is-open { opacity: 1; pointer-events: auto; }
 
