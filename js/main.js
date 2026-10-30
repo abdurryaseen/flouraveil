@@ -2,7 +2,7 @@
    Flouraveil — storefront script
    Product images are illustrated SVG placeholders. Swap any
    product's `image` field (in data/products.json) for a real photo path (e.g.
-   "images/products/rose-abaya.jpg") and it will be used instead.
+   "images/products/rose-niqab.jpg") and it will be used instead.
    ============================================================ */
 
 // Product catalogue lives in data/products.json (shared with the Stripe checkout function).
@@ -80,7 +80,7 @@ function setFilter(f) {
   renderProducts(f);
 }
 document.querySelectorAll(".chip").forEach((chip) => chip.addEventListener("click", () => setFilter(chip.dataset.filter)));
-document.querySelectorAll(".collection-card").forEach((card) => card.addEventListener("click", () => setFilter(card.dataset.filter)));
+document.querySelectorAll("a[data-filter]").forEach((card) => card.addEventListener("click", () => setFilter(card.dataset.filter)));
 
 /* ---------- Cart ---------- */
 const cart = new Map();
