@@ -1,20 +1,12 @@
 /* ============================================================
    Flouraveil — storefront script
    Product images are illustrated SVG placeholders. Swap any
-   product's `image` field for a real photo path (e.g.
+   product's `image` field (in data/products.json) for a real photo path (e.g.
    "images/products/rose-abaya.jpg") and it will be used instead.
    ============================================================ */
 
-const PRODUCTS = [
-  { id: 1, name: "Sakura Flow Abaya", type: "abaya", price: 89, tag: "New", fabric: "Nida crepe", bg: "#f9e9ec", colors: ["#e8b4bf", "#fffaf6", "#c98a98"] },
-  { id: 2, name: "Pearl Butterfly Abaya", type: "abaya", price: 112, tag: "Bestseller", fabric: "Chiffon overlay", bg: "#f3ece6", colors: ["#f5efe8", "#e8b4bf", "#d9c7b4"] },
-  { id: 3, name: "Rosewood Open Abaya", type: "abaya", price: 98, fabric: "Linen blend", bg: "#f6e3e6", colors: ["#9b5c6b", "#c98a98", "#4a3438"] },
-  { id: 4, name: "Petal Tiered Niqab", type: "niqab", price: 24, tag: "New", fabric: "3-layer chiffon", bg: "#fbeef0", colors: ["#e8b4bf", "#4a3438", "#fffaf6"] },
-  { id: 5, name: "Ivory Breathe Niqab", type: "niqab", price: 22, fabric: "Soft jersey", bg: "#f5f0ea", colors: ["#fffaf6", "#c2a26b", "#4a3438"] },
-  { id: 6, name: "Blossom Khimar", type: "khimar", price: 46, tag: "Bestseller", fabric: "Medina silk", bg: "#f8e6ea", colors: ["#f3d4da", "#c98a98", "#fffaf6"] },
-  { id: 7, name: "Garden Prayer Set", type: "khimar", price: 64, fabric: "Cotton voile", bg: "#f2e8ee", colors: ["#e8c7d6", "#f5efe8"] },
-  { id: 8, name: "Dusk Rose Abaya", type: "abaya", price: 105, tag: "Limited", fabric: "Satin crepe", bg: "#efdfe2", colors: ["#c98a98", "#9b5c6b"] },
-];
+// Product catalogue lives in data/products.json (shared with the Stripe checkout function).
+let PRODUCTS = [];
 
 /* ---------- Illustrated garment placeholders ---------- */
 function shade(hex, amt) {
@@ -76,7 +68,6 @@ function renderProducts(filter = "all") {
       <div class="swatches">${p.colors.map((c) => `<i style="background:${c}" data-swatch="${p.id}" data-color="${c}" title="Colour option"></i>`).join("")}</div>
     </article>`).join("");
 }
-renderProducts();
 
 /* ---------- Filters ---------- */
 function setFilter(f) {
@@ -99,7 +90,20 @@ function showToast(msg) {
   showToast.t = setTimeout(() => toast.classList.remove("is-show"), 2200);
 }
 
+function saveCart() {
+  try { localStorage.setItem("flouraveil-bag", JSON.stringify([...cart.values()].map(({ p, qty }) => ({ id: p.id, qty })))); } catch (e) {}
+}
+function restoreCart() {
+  try {
+    (JSON.parse(localStorage.getItem("flouraveil-bag")) || []).forEach(({ id, qty }) => {
+      const p = PRODUCTS.find((x) => x.id === id);
+      if (p && qty > 0) cart.set(p.id, { p, qty });
+    });
+  } catch (e) {}
+}
+
 function renderCart() {
+  saveCart();
   const items = [...cart.values()];
   document.querySelector(".cart-count").textContent = items.reduce((n, i) => n + i.qty, 0);
   document.getElementById("subtotal").textContent = "$" + items.reduce((s, i) => s + i.qty * i.p.price, 0);
@@ -151,9 +155,28 @@ document.addEventListener("click", (e) => {
 document.querySelector(".cart-btn").addEventListener("click", () => toggleDrawer(true));
 document.querySelector(".drawer__close").addEventListener("click", () => toggleDrawer(false));
 overlay.addEventListener("click", () => toggleDrawer(false));
-document.querySelector(".drawer__foot .btn").addEventListener("click", () =>
-  showToast(cart.size ? "Checkout is coming soon, in shaa Allah" : "Your bag is empty"));
-renderCart();
+const checkoutBtn = document.querySelector(".drawer__foot .btn");
+checkoutBtn.addEventListener("click", async () => {
+  if (!cart.size) return showToast("Your bag is empty");
+  const endpoint = (window.FLOURAVEIL_CONFIG || {}).checkoutEndpoint;
+  if (!endpoint) return showToast("Checkout is coming soon, in shaa Allah");
+  checkoutBtn.disabled = true;
+  checkoutBtn.textContent = "Opening secure checkout…";
+  try {
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: [...cart.values()].map(({ p, qty }) => ({ id: p.id, qty })) }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.url) throw new Error(data.error || "Checkout is unavailable right now. Please try again soon.");
+    window.location.href = data.url;
+  } catch (err) {
+    showToast(err.message || "Could not start checkout");
+    checkoutBtn.disabled = false;
+    checkoutBtn.textContent = "Checkout";
+  }
+});
 
 /* ---------- Mobile menu ---------- */
 const burger = document.querySelector(".nav__burger");
@@ -184,3 +207,14 @@ for (let i = 0; i < 18; i++) {
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ---------- Load catalogue ---------- */
+fetch("data/products.json")
+  .then((r) => r.json())
+  .then((data) => {
+    PRODUCTS = data;
+    renderProducts();
+    restoreCart();
+    renderCart();
+  })
+  .catch(() => { grid.innerHTML = "<p>Products could not be loaded. Please refresh.</p>"; });
