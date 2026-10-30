@@ -60,7 +60,7 @@ function renderProducts(filter = "all") {
   }
   grid.innerHTML = list.map((p, i) => `
     <article class="product" style="animation-delay:${i * 60}ms">
-      <div class="product__media" style="background:${p.bg}">
+      <div class="product__media${p.image ? " has-photo" : ""}" style="background:${p.bg}">
         ${p.tag ? `<span class="product__tag">${p.tag}</span>` : ""}
         <button class="product__wish ${wishlist.has(p.id) ? "is-on" : ""}" data-wish="${p.id}" aria-label="Add ${p.name} to wishlist">♡</button>
         <div class="product__art" data-art="${p.id}">${media(p)}</div>
@@ -115,7 +115,7 @@ function renderCart() {
   document.querySelector(".drawer__items").innerHTML = items.length
     ? items.map(({ p, qty }) => `
       <li>
-        <div class="drawer__thumb" style="background:${p.bg}">${media(p)}</div>
+        <div class="drawer__thumb${p.image ? " has-photo" : ""}" style="background:${p.bg}">${media(p)}</div>
         <div><h4>${p.name}</h4><small>$${p.price}</small>
           <div class="qty"><button data-dec="${p.id}">−</button>${qty}<button data-inc="${p.id}">+</button></div>
         </div>
