@@ -42,17 +42,17 @@
   },
   {
     "id": 4,
-    "name": "Petal Tiered Niqab",
+    "name": "Piped Layered Niqab",
     "type": "niqab",
     "price": 24,
     "tag": "New",
-    "fabric": "3-layer chiffon",
-    "bg": "#fbeef0",
+    "fabric": "Chiffon, white piped edges",
+    "bg": "#f1ecec",
     "colors": [
-      "#e8b4bf",
-      "#4a3438",
+      "#1c1b22",
       "#fffaf6"
-    ]
+    ],
+    "image": "images/products/niqab-piped.jpg"
   },
   {
     "id": 5,
@@ -105,5 +105,40 @@
       "#c98a98",
       "#9b5c6b"
     ]
+  },
+  {
+    "id": 9,
+    "name": "Bow & Lace Gloves",
+    "type": "gloves",
+    "price": 14,
+    "tag": "New",
+    "fabric": "Stretch jersey \u00b7 10 colours",
+    "bg": "#f5eeee",
+    "colors": [
+      "#7b1f45",
+      "#f2c9cf",
+      "#1f2550",
+      "#5fd3c6",
+      "#a7a9b4",
+      "#18181b",
+      "#4a2622",
+      "#f7f7f7",
+      "#3d5a1e",
+      "#ddd0bd"
+    ],
+    "image": "images/products/gloves-bow-lace.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Split-Toe Modesty Socks",
+    "type": "socks",
+    "price": 9,
+    "tag": "New",
+    "fabric": "Cotton blend \u00b7 S, M, L",
+    "bg": "#f3efed",
+    "colors": [
+      "#18181b"
+    ],
+    "image": "images/products/socks-split-toe.jpg"
   }
 ]
