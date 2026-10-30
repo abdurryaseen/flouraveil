@@ -1,0 +1,109 @@
+[
+  {
+    "id": 1,
+    "name": "Sakura Flow Abaya",
+    "type": "abaya",
+    "price": 89,
+    "tag": "New",
+    "fabric": "Nida crepe",
+    "bg": "#f9e9ec",
+    "colors": [
+      "#e8b4bf",
+      "#fffaf6",
+      "#c98a98"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Pearl Butterfly Abaya",
+    "type": "abaya",
+    "price": 112,
+    "tag": "Bestseller",
+    "fabric": "Chiffon overlay",
+    "bg": "#f3ece6",
+    "colors": [
+      "#f5efe8",
+      "#e8b4bf",
+      "#d9c7b4"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Rosewood Open Abaya",
+    "type": "abaya",
+    "price": 98,
+    "fabric": "Linen blend",
+    "bg": "#f6e3e6",
+    "colors": [
+      "#9b5c6b",
+      "#c98a98",
+      "#4a3438"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Petal Tiered Niqab",
+    "type": "niqab",
+    "price": 24,
+    "tag": "New",
+    "fabric": "3-layer chiffon",
+    "bg": "#fbeef0",
+    "colors": [
+      "#e8b4bf",
+      "#4a3438",
+      "#fffaf6"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Ivory Breathe Niqab",
+    "type": "niqab",
+    "price": 22,
+    "fabric": "Soft jersey",
+    "bg": "#f5f0ea",
+    "colors": [
+      "#fffaf6",
+      "#c2a26b",
+      "#4a3438"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Blossom Khimar",
+    "type": "khimar",
+    "price": 46,
+    "tag": "Bestseller",
+    "fabric": "Medina silk",
+    "bg": "#f8e6ea",
+    "colors": [
+      "#f3d4da",
+      "#c98a98",
+      "#fffaf6"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Garden Prayer Set",
+    "type": "khimar",
+    "price": 64,
+    "fabric": "Cotton voile",
+    "bg": "#f2e8ee",
+    "colors": [
+      "#e8c7d6",
+      "#f5efe8"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Dusk Rose Abaya",
+    "type": "abaya",
+    "price": 105,
+    "tag": "Limited",
+    "fabric": "Satin crepe",
+    "bg": "#efdfe2",
+    "colors": [
+      "#c98a98",
+      "#9b5c6b"
+    ]
+  }
+]
