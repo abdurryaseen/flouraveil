@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flouraveil — Modest Wear in Bloom</title>
+  <meta name="description" content="Flouraveil: soft, elegant abayas, niqabs and khimars, designed with grace and modesty." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="announce">Free shipping on orders over $120 · Gift wrapping in blush tissue, always</div>
+
+  <header class="nav" id="top">
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links">
+      <a href="#shop">Shop</a>
+      <a href="#collections">Collections</a>
+      <a href="#story">Our Story</a>
+    </nav>
+    <a href="#top" class="logo" aria-label="Flouraveil home">
+      <!-- LOGO: replace this block with <img src="images/logo.png" alt="Flouraveil"> once the logo is ready -->
+      <span class="logo__mark" aria-hidden="true">❀</span>
+      <span class="logo__text">Flouraveil</span>
+    </a>
+    <div class="nav__actions">
+      <a href="#contact" class="nav__link-hide">Contact</a>
+      <button class="cart-btn" aria-label="Open bag">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg" style="background-image:url('images/blossom-street.jpg')"></div>
+    <div class="hero__veil"></div>
+    <div class="hero__content">
+      <p class="eyebrow">Spring Bloom Collection · 1448</p>
+      <h1>Modesty, <em>softly</em> in bloom</h1>
+      <p class="hero__lead">Flowing abayas, breathable niqabs and gentle khimars in blush, ivory and petal tones — made to move with you through every season.</p>
+      <div class="hero__ctas">
+        <a href="#shop" class="btn btn--solid">Shop the collection</a>
+        <a href="#story" class="btn btn--ghost">Our story</a>
+      </div>
+    </div>
+    <div class="petals" aria-hidden="true"></div>
+  </section>
+
+  <!-- VALUES STRIP -->
+  <section class="values">
+    <div><span>❀</span>Breathable, opaque fabrics</div>
+    <div><span>❀</span>Ethically sewn in small batches</div>
+    <div><span>❀</span>Free exchanges within 30 days</div>
+    <div><span>❀</span>Sizes 50″ – 62″ & custom lengths</div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section class="collections" id="collections">
+    <header class="section-head">
+      <p class="eyebrow">Curated for you</p>
+      <h2>Collections</h2>
+    </header>
+    <div class="collections__grid">
+      <a href="#shop" data-filter="abaya" class="collection-card">
+        <img src="images/piano.jpg" alt="White piano among pink blossoms" loading="lazy" />
+        <div class="collection-card__label"><h3>Abayas</h3><span>Explore →</span></div>
+      </a>
+      <a href="#shop" data-filter="niqab" class="collection-card">
+        <img src="images/bookshelf.jpg" alt="Blush bookshelf with peonies" loading="lazy" />
+        <div class="collection-card__label"><h3>Niqabs</h3><span>Explore →</span></div>
+      </a>
+      <a href="#shop" data-filter="khimar" class="collection-card">
+        <img src="images/blossom-street.jpg" alt="Pink bicycle on a blossom-lined street" loading="lazy" />
+        <div class="collection-card__label"><h3>Khimars & Sets</h3><span>Explore →</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section class="shop" id="shop">
+    <header class="section-head">
+      <p class="eyebrow">New arrivals</p>
+      <h2>The Bloom Edit</h2>
+    </header>
+    <div class="filters" role="tablist">
+      <button class="chip is-active" data-filter="all">All</button>
+      <button class="chip" data-filter="abaya">Abayas</button>
+      <button class="chip" data-filter="niqab">Niqabs</button>
+      <button class="chip" data-filter="khimar">Khimars & Sets</button>
+    </div>
+    <div class="products" id="products"></div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="story__img"><img src="images/piano.jpg" alt="" loading="lazy" /></div>
+    <div class="story__text">
+      <p class="eyebrow">Our story</p>
+      <h2>A veil of flowers</h2>
+      <p>Flouraveil was born from a simple wish: that modest wear could feel as gentle as a spring morning. Every piece is cut generously, lined thoughtfully and finished by hand, so you can pray, work, travel and celebrate in comfort.</p>
+      <p>Our palette is drawn from blossom season — soft blush, warm ivory, rosewood and pearl — because covering beautifully should never mean covering in a hurry.</p>
+      <a href="#shop" class="btn btn--solid">Discover the pieces</a>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote" style="background-image:url('images/bookshelf.jpg')">
+    <div class="quote__inner">
+      <p class="quote__ar" lang="ar" dir="rtl">إِنَّ اللَّهَ جَمِيلٌ يُحِبُّ الْجَمَالَ</p>
+      <p class="quote__en">“Indeed, Allah is beautiful and loves beauty.”</p>
+      <span>— Sahih Muslim</span>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="contact">
+    <h2>Join the garden</h2>
+    <p>Early access to new collections, restocks and Eid edits — no spam, ever.</p>
+    <form class="newsletter__form">
+      <input type="email" placeholder="Your email address" required aria-label="Email address" />
+      <button class="btn btn--solid" type="submit">Subscribe</button>
+    </form>
+    <p class="newsletter__msg" hidden>JazakAllahu khayran — you're on the list ❀</p>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="logo__text">Flouraveil</span>
+      <p>Modest wear, softly in bloom.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <a href="#shop">Abayas</a><a href="#shop">Niqabs</a><a href="#shop">Khimars</a><a href="#shop">Gift cards</a>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <a href="#">Size guide</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#contact">Contact</a>
+    </div>
+    <div>
+      <h4>Follow</h4>
+      <a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">TikTok</a>
+    </div>
+    <p class="footer__copy">© <span id="year"></span> Flouraveil. All rights reserved.</p>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <aside class="drawer" aria-hidden="true">
+    <div class="drawer__head">
+      <h3>Your bag</h3>
+      <button class="drawer__close" aria-label="Close bag">×</button>
+    </div>
+    <ul class="drawer__items"></ul>
+    <div class="drawer__foot">
+      <div class="drawer__total"><span>Subtotal</span><strong id="subtotal">$0</strong></div>
+      <button class="btn btn--solid btn--block">Checkout</button>
+    </div>
+  </aside>
+  <div class="overlay"></div>
+  <div class="toast" role="status"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
