@@ -1,6 +1,6 @@
 # Flouraveil
 
-A soft, blossom-inspired storefront for modest Islamic womenswear — abayas, niqabs and khimars.
+A soft, blossom-inspired storefront for modest Islamic womenswear — niqabs, gloves and socks.
 
 Plain HTML/CSS/JS, no build step. Open `index.html` or serve the folder (e.g. GitHub Pages).
 
