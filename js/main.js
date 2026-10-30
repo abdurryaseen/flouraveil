@@ -53,6 +53,11 @@ const wishlist = new Set();
 
 function renderProducts(filter = "all") {
   const list = filter === "all" ? PRODUCTS : PRODUCTS.filter((p) => p.type === filter);
+  if (!list.length) {
+    const label = filter.charAt(0).toUpperCase() + filter.slice(1);
+    grid.innerHTML = `<p class="products__empty">${label} are coming soon, in shaa Allah ❀</p>`;
+    return;
+  }
   grid.innerHTML = list.map((p, i) => `
     <article class="product" style="animation-delay:${i * 60}ms">
       <div class="product__media" style="background:${p.bg}">
