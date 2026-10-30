@@ -1,7 +1,7 @@
 /* Flouraveil settings
-   After deploying to Vercel, paste the checkout URL here, e.g.
-   "https://flouraveil.vercel.app/api/create-checkout-session"
-   Leave it empty and the Checkout button shows "coming soon". */
+   Checkout runs on Cloudflare Pages (functions/api/create-checkout-session.js).
+   On the old GitHub Pages address there's no server, so the button shows
+   "coming soon" there instead. */
 window.FLOURAVEIL_CONFIG = {
-  checkoutEndpoint: "",
+  checkoutEndpoint: location.hostname.endsWith("github.io") ? "" : "/api/create-checkout-session",
 };
