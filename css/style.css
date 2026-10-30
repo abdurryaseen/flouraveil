@@ -163,6 +163,7 @@ section { scroll-margin-top: 80px; }
 .chip.is-active { background: var(--rosewood); border-color: var(--rosewood); color: #fff; }
 
 .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2rem 1.5rem; }
+.products__empty { grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; font-family: var(--serif); font-style: italic; font-size: 1.4rem; color: var(--rosewood); }
 .product { animation: rise .6s ease both; }
 .product__media {
   position: relative; aspect-ratio: 4/5; border-radius: var(--radius); overflow: hidden;
