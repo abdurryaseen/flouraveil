@@ -221,7 +221,7 @@ section { scroll-margin-top: 80px; }
 
 /* Newsletter */
 .newsletter { text-align: center; padding: 6rem 1.5rem; background: var(--peach); }
-.newsletter__logo { width: 180px; margin: 0 auto 1.2rem; }
+.newsletter__logo { width: 130px; margin: 0 auto 1.2rem; }
 .newsletter h2 { font-size: clamp(2.2rem, 4vw, 3rem); margin-bottom: .6rem; }
 .newsletter p { color: var(--ink-soft); }
 .newsletter__form { display: flex; gap: .6rem; max-width: 480px; margin: 2rem auto 0; }
