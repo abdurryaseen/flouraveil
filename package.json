@@ -1,0 +1,9 @@
+{
+  "name": "flouraveil",
+  "private": true,
+  "description": "Flouraveil storefront with Stripe Checkout",
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "stripe": "^17.0.0"
+  }
+}

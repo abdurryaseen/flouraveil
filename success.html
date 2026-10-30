@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank you — Flouraveil</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .thanks { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 2rem 1rem;
+      background: linear-gradient(180deg, var(--ivory), var(--peach)); }
+    .thanks img { width: min(260px, 70vw); margin: 0 auto 2rem; }
+    .thanks h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); margin-bottom: 1rem; }
+    .thanks p { color: var(--ink-soft); max-width: 460px; margin: 0 auto 2rem; }
+  </style>
+</head>
+<body>
+  <main class="thanks">
+    <div>
+      <img src="images/logo-rose.png" alt="Flouraveil" />
+      <p class="eyebrow">Order confirmed</p>
+      <h1>JazakAllahu khayran</h1>
+      <p>Your order is in. A receipt is on its way to your email, and we'll let you know as soon as your pieces are wrapped and shipped.</p>
+      <a href="./" class="btn btn--solid">Back to the shop</a>
+    </div>
+  </main>
+  <script>try { localStorage.removeItem("flouraveil-bag"); } catch (e) {}</script>
+</body>
+</html>
